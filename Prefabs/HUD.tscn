@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Menu/Text/Peralta-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/Score.gd" type="Script" id=2]
+[ext_resource path="res://Main Characters/heart.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/LifeHolder.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+outline_size = 2
+outline_color = Color( 0.0156863, 0, 0.00392157, 1 )
+font_data = ExtResource( 1 )
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -150.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Holder" type="Control" parent="HBoxContainer"]
+margin_right = 158.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="HBoxContainer/Holder"]
+margin_left = 1.0
+margin_top = -14.0
+margin_right = 52.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 1 )
+text = "00"
+align = 2
+valign = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Holder2" type="Control" parent="HBoxContainer"]
+margin_left = 162.0
+margin_right = 320.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lifes" type="TextureRect" parent="HBoxContainer/Holder2"]
+margin_left = -80.0
+margin_right = -49.0
+margin_bottom = 34.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
